@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <script src="script.js" defer async></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: flex;
+        margin: 20px 50px;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        width: 100%;
+      }
+      /* LOGIN */
+      .title {
+        font-size: 36px;
+      }
+      .container-login {
+        width: 36%;
+        height: 36%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+        cursor: pointer;
+        box-shadow: 0 0 10px #ccc;
+      }
+      .login-btn {
+        display: flex;
+        /* text-align: center; */
+        align-items: center;
+        border-radius: 12px;
+        justify-content: center;
+        gap: 20px;
+        background-color: antiquewhite;
+        width: 240px;
+        height: 60px;
+      }
+      .login-btn:hover {
+        box-shadow: 0 0 100px 1px #ccc;
+      }
+      .img-logo {
+        width: 50px;
+        height: 50px;
+      }
+      .sign-in {
+        font-size: 18px;
+      }
+
+      /* ////// */
+      .btn {
+        cursor: pointer;
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        border: none;
+        border-radius: 12px;
+      }
+      .compose-mail,
+      .send-btn {
+        background-color: #c2e7ff;
+      }
+      .compose-mail:hover,
+      .send-btn:hover {
+        background-color: #a2cbe5;
+      }
+      .logout {
+        background-color: antiquewhite;
+      }
+      .logout:hover {
+        background-color: rgb(211, 191, 165);
+      }
+      .name {
+        font-size: 24px;
+        margin-bottom: 36px;
+        align-self: flex-start;
+      }
+      .img-user {
+        /* shape-outside: circle(10px); */
+        width: 28px;
+      }
+
+      .hidden {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .modal {
+        width: 80%;
+        height: 80%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* max-width: 60rem; */
+        border-radius: 12px;
+        background-color: #f3f3f3;
+        padding: 1rem 3rem;
+        box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        transition: all 0.5s;
+        /* overflow-y: auto; */
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 100;
+        transition: all 0.5s;
+      }
+      .btn--close-modal {
+        font-family: inherit;
+        color: inherit;
+        position: absolute;
+        top: 0.2rem;
+        right: 1rem;
+        font-size: 2.4rem;
+        cursor: pointer;
+        border: none;
+        background: none;
+      }
+      .email {
+        /* margin-top: 10px; */
+        width: 80%;
+        height: 36px;
+        /* text-align: left; */
+        /* te */
+        align-items: center;
+        display: flex;
+        justify-content: left;
+        cursor: pointer;
+        /* background-color: #ccc; */
+        border-top: 1px solid #000;
+      }
+      .email:last-child {
+        border-bottom: 1px solid #000;
+      }
+      .email:hover {
+        background-color: #f0eded;
+      }
+      .sender {
+        width: 20%;
+        padding-left: 24px;
+        /* text-align: left; */
+      }
+      .subject {
+        width: 60%;
+      }
+      .date {
+        margin-right: 0;
+      }
+      .header {
+        margin: 20px 0;
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        /* background-color: #c2e7ff; */
+        /* position: fixed; */
+      }
+
+      .container-email {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        width: 100%;
+        height: 76%;
+        overflow-y: auto;
+      }
+      .email-header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        /* position: fixed; */
+      }
+      /* .address {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+} */
+      .from-details {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .to-details {
+        font-size: 14px;
+      }
+      .subject-details {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+      /* .content-details {
+  height: 50%;
+  width: 60%;
+} */
+      .attach-btn {
+        width: 24px;
+      }
+
+      /* COMPOSE A EMAIL */
+      .new-mail--title {
+        font-size: 28px;
+      }
+
+      .form-mail {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem;
+        height: 70%;
+        margin-bottom: 16px;
+        border-radius: 12px;
+      }
+      .input {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        height: 32px;
+        width: 90%;
+      }
+      .input:focus {
+        outline: none;
+      }
+      span {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .text-input {
+        /* border: none; */
+        width: 100%;
+        height: 80%;
+        padding: 10px 10px;
+        font-family: Arial, sans-serif;
+      }
+
+      .button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        /* justify-content: flex-end; */
+      }
+      .attach-btn:hover {
+        cursor: pointer;
+      }
+      .image-file {
+        margin-top: 10px;
+        height: 30px;
+        /* width: 0; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-login">
+      <p class="title">Đăng nhập</p>
+
+      <button type="button" class="login-btn">Đăng Nhập</button>
+    </div>
+  </body>
+</html>

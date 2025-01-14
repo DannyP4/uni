@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./W3.CSS Template_files/w3.css">
+<link rel="stylesheet" href="./W3.CSS Template_files/w3-theme-black.css">
+<link rel="stylesheet" href="./W3.CSS Template_files/css">
+<link rel="stylesheet" href="./W3.CSS Template_files/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">
+      <img src="./W3.CSS Template_files/logo.png" alt="Logo" style="height: 26px; width: auto;">
+  </a>
+    <a href="info_course.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Thông tin môn học</a>
+    <a href="web_technologies.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Các công nghệ Web</a>
+    <a href="student_info.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Thông tin sinh viên</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Thông tin môn học</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading1">Mục tiêu môn học</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading2">Thông tin học phần</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading3">Nội dung tóm tắt học phần</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div id="heading1" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Mục tiêu môn học</h1>
+      <p style="font-size: larger;">
+        Mục tiêu: Học phần cung cấp các kiến thức cần thiết để xây dựng và phát triển các ứng dụng, dịch vụ trực tuyến trên môi trường web. Sau khi học xong học phần này, sinh viên có khả năng:<br>
+
+●       Có thể sử dụng một ngôn ngữ lập trình như JSP,  PHP để phát triển ứng dụng web cho các lĩnh vực khác nhau như: hệ quản trị nội dung (CMS), cổng thông tin (Portal), hay các ứng dụng điện tử (eCommerce, eLearning, eGoverment,…) <br>
+
+●       Nắm vững được các công nghệ web, các platform, framework hiện đang thịnh hành.<br>
+
+Ngoài ra học phần cũng cung cấp cho sinh viên các kỹ năng làm việc nhóm, thuyết trình và thái độ cần thiết để làm việc và ứng dụng các kỹ thuật trong các dự án, công ty về phần mềm sau này.<br>
+        </p>
+        <img src="image/cnweb.png" style="height: 250px; width: 500px;" >
+    </div>
+    <div class="w3-third w3-container">
+      <div class="w3-third w3-container" style="width: 400px; " >
+        <a href="https://codelearn.io/home" target="_blank">
+            <img src="image/codelearn.png" style="height: 225px; width: 370px;">
+            <h5 style="text-align: center;">Tự học lập trình</h5>
+        </a>
+    </div>
+  </div>
+  </div>
+
+  <div id="heading2" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Thông tin học phần</h1>
+      <p style="font-size: larger;">
+        Số tín chỉ: 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Số giờ LT: 2 <br>
+        Số giờ BT: 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Số giờ TN/TH: 0 <br>
+        Số giờ Tự học: 6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Số giờ Thực tập: 0 <br>
+        kHD Thực tập: 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kHD Thực tập kỳ hè: 0 <br>
+        kHD Đồ án: 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phân bố: (32-2-0-6)
+        </p>
+        <img src="image/www.png" style="height: 350px; width: 350px;">
+    </div>
+    <div class="w3-third w3-container" style="width: 400px; ">
+      <a href="https://www.w3schools.com/js/js_api_history.asp" target="_blank">
+        <img src="image/web-api.jpg" style="height: 225px; width: 370px;">
+        <h5 style="text-align: center;">Lịch sử WEB - API</h5>
+    </a>
+    </div>
+  </div>
+
+  <div id="heading3" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Nội dung tóm tắt của học phần</h1>
+<p style="font-size: larger;"> Internet, web, kiến trúc ứng dụng web,  HTML, CSS, Javascript, PHP, JSP, Ajax, DOM, XML, SOA, An toàn bảo mật web, v.v. </p>
+<img src="image/www2.png" style="height: 350px; width: 350px;">
+    </div>
+    <div class="w3-third w3-container" style="width: 400px; ">
+      <a href="https://leetcode.com/" target="_blank">
+        <img src="image/leetcode.png" style="height: 240px; width: 370px;">
+        <h5 style="text-align: center;">Nâng cao khả năng lập trình</h5>
+    </a>
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Đ/c: Hà Nội<br>
+        SĐT: 0934551156<br>
+        Mail: long.pd225737@sis.hust.edu.vn
+      </h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.facebook.com/plong1911/" target="_blank">Long Pham</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+
+</body></html>

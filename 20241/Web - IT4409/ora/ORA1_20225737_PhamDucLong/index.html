@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./W3.CSS Template_files/w3.css">
+<link rel="stylesheet" href="./W3.CSS Template_files/w3-theme-black.css">
+<link rel="stylesheet" href="./W3.CSS Template_files/css">
+<link rel="stylesheet" href="./W3.CSS Template_files/font-awesome.min.css">
+<style>
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+
+p {
+  font-size: larger;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">
+      <img src="./W3.CSS Template_files/logo.png" alt="Logo" style="height: 26px; width: auto;">
+  </a>
+    <a href="info_course.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Thông tin môn học</a>
+    <a href="web_technologies.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Các công nghệ Web</a>
+    <a href="student_info.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Thông tin sinh viên</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Home</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading1">Thông tin khai giảng</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading2">Thông tin semina</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading3">Công ty quan tâm</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+
+  <div id="heading1" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Thông tin khai giảng</h1>
+      <p>Môn học Công nghệ web và dịch vụ trực tuyến bắt đầu lớp học vào tuần thứ 2 kì 2024.1 </p>
+      <img src="image/cnweb.png" alt="web_1" style="height: 250px; width: 500px;">
+    </div>
+    <div class="w3-third w3-container" style="width: 400px;">
+      <a href="https://leetcode.com/" target="_blank">
+        <img src="image/leetcode.png" style="height: 240px; width: 370px;">
+        <h5 style="text-align: center;">Nâng cao khả năng lập trình</h5>
+    </a>
+    </div>
+  </div>
+
+  <div id="heading2" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Thông tin semina</h1>
+      <p>Semina sẽ được tổ chức vào buổi học đầu tiên của môn học</p>
+      <img src="image/seminar.jpg" alt="web_2" style="height: 250px; width: 500px;">
+    </div>    
+    <div class="w3-third w3-container" style="width: 400px;">
+      <a href="https://www.w3schools.com/js/js_api_history.asp" target="_blank">
+        <img src="image/web-api.jpg" style="height: 225px; width: 370px;">
+        <h5 style="text-align: center;">Lịch sử WEB - API</h5>
+      </a>
+  </div>
+  </div>
+
+  <div id="heading3" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Công ty quan tâm</h1>
+      <p style="font-size: larger;">
+        <ul style="font-size: larger;">-- Hiện tại, nhiều công ty đang quan tâm và tuyển dụng vị trí Web Developer, đặc biệt ở các khu vực như: 
+
+       <li> 1. Hoa Kỳ: Các công ty lớn như Google, Meta, Microsoft, và Apple luôn cần web developer với mức lương trung bình khoảng 76,000 USD mỗi năm.</li>
+        
+        <li>2. Canada: Do thiếu hụt nhân tài trong lĩnh vực phát triển web, nhiều cơ hội việc làm tại các thành phố như Toronto và Vancouver với mức lương trung bình khoảng 69,000 USD mỗi năm.</li>
+        
+        <li>3. Ấn Độ: Các tập đoàn lớn như Infosys, TCS, và Wipro liên tục tìm kiếm lập trình viên web. Ngoài ra, sự bùng nổ của các startup cũng đẩy nhu cầu phát triển web lên cao</li>
+        
+        <li>4. Công việc từ xa: Nhiều công ty như Turing đang tuyển dụng web developer cho các vị trí làm việc từ xa, cho phép làm việc từ bất kỳ đâu.</li>
+        
+       <li>Cả Vương quốc Anh, Úc, và UAE cũng có nhu cầu lớn về các chuyên gia phát triển web với mức lương cạnh tranh và nhiều cơ hội phát triển nghề nghiệp.</li>
+      </ul></p>
+    </div>
+    <div class="w3-third w3-container" style="width: 400px;">
+      <a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank">
+        <img src="image/webdev.jpg" style="height: 225px; width: 370px;">
+        <h5 style="text-align: center">Web Development</h5>
+    </a>
+    </div>
+  </div>
+
+  <!-- Đây là phần đáy của trang thường sẽ có sđt giới thiệu bla bla -->
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Đ/c: Hà Nội<br>
+        SĐT: 0934551156<br>
+        Mail: long.pd225737@sis.hust.edu.vn
+      </h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.facebook.com/plong1911/" target="_blank">Long Pham</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+
+</body></html>

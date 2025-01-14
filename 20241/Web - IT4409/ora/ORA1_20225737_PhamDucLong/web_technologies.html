@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)https://www.w3schools.com/w3css/tryw3css_templates_webpage.htm# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Home</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./W3.CSS Template_files/w3.css">
+<link rel="stylesheet" href="./W3.CSS Template_files/w3-theme-black.css">
+<link rel="stylesheet" href="./W3.CSS Template_files/css">
+<link rel="stylesheet" href="./W3.CSS Template_files/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">
+      <img src="./W3.CSS Template_files/logo.png" alt="Logo" style="height: 26px; width: auto;">
+  </a>
+    <a href="info_course.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Thông tin môn học</a>
+    <a href="web_technologies.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Các công nghệ Web</a>
+    <a href="student_info.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Thông tin sinh viên</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Các công nghệ web</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading1">1. Front-end Development</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading2">2. Back-end Development</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#heading3">3. Một số công nghệ khác</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div id="heading1" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">1. Front-end Development (Phát triển giao diện người dùng)  </h1>
+<p style="font-size: larger;">
+  ● <b>HTML5/CSS3</b>: Đây là ngôn ngữ cơ bản để xây dựng giao diện web. HTML5 giúp định nghĩa cấu trúc trang web, trong khi CSS3 giúp tạo kiểu dáng và bố cục trang web.<br>
+  ● <b>JavaScript</b>: Ngôn ngữ chính để phát triển tương tác phía người dùng. Nó giúp trang web trở nên động hơn và có khả năng phản hồi người dùng.<br>
+  ● <b>Frameworks và Libraries</b>:<br>
+  - React.js: Thư viện JavaScript phổ biến, do Facebook phát triển, giúp xây dựng giao diện người dùng với kiến trúc component-based.<br>
+  - Angular.js: Framework của Google giúp xây dựng các ứng dụng web một cách tổ chức và có cấu trúc.<br>
+  - Vue.js: Một framework nhẹ và dễ học, rất phù hợp cho những dự án nhỏ hoặc vừa.
+</p>
+<img src="image/frontend.jpg " style="height: 250px; width: 500px;">
+    </div>
+    <div class="w3-third w3-container" style="width: 400px; ">
+      <a href="https://www.w3schools.com/howto/howto_blog_become_frontenddev.asp" target="_blank">
+        <img src="image/fedev.jph.jpeg" style="height: 225px; width: 370px;">
+        <h5 style="text-align: center;">Cách để trở thành lập trình viên Front-End</h5>
+    </a>
+    </div>
+  </div>
+
+  <div id="heading2" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container" >
+      <h1 class="w3-text-teal">2. Back-end Development (Phát triển phía máy chủ)</h1>
+      <p style="font-size: larger;">
+        ● <b>Node.js</b>: Nền tảng chạy JavaScript phía máy chủ, rất nhanh chóng và hiệu quả cho các ứng dụng cần xử lý nhiều yêu cầu đồng thời. <br>
+        ● <b>Express.js</b>: Một framework cho Node.js, giúp dễ dàng xây dựng API và xử lý yêu cầu HTTP.<br>
+        ● <b>Django</b>: Framework Python nổi tiếng với sự bảo mật cao, dễ phát triển nhanh, và có khả năng mở rộng.<br>
+        ● <b>Ruby on Rails</b>: Framework của Ruby, rất phù hợp để xây dựng các ứng dụng nhanh chóng với cấu trúc rõ ràng.
+      </p>
+      <img src="image/backend.jpg " style="height: 250px; width: 500px;">
+    </div>
+    <div class="w3-third w3-container" style="width: 400px; ">
+      <a href="https://campus.w3schools.com/products/learn-back-end-development-with-python?srsltid=AfmBOorUo3NSDI_zlV1EKyiHWSkq7ElwOALMK3dYuhkHw_PjoSdgfe3j" target="_blank">
+        <img src="image/bedev.jpg" style="height: 225px; width: 370px;">
+        <h5 style="text-align: center;">Khóa học Back-End</h5>
+    </a>
+    </div>
+  </div>
+
+  <div id="heading3" class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container" >
+      <h1 class="w3-text-teal">3. Một số công nghệ khác</h1>
+      <p style="font-size: larger;">
+        <b>1. Database (Cơ sở dữ liệu)</b><br>
+        ● SQL: Sử dụng với MySQL hoặc PostgreSQL, phù hợp với dữ liệu có cấu trúc và cần tính toàn vẹn cao.<br>
+        ● NoSQL: MongoDB là lựa chọn phổ biến để lưu trữ dữ liệu linh hoạt và không cần cấu trúc cố định.<br>
+<b>2. API & Giao tiếp</b><br>
+● RESTful API: Phổ biến để giao tiếp giữa client và server thông qua HTTP.<br>
+● GraphQL: Cho phép client yêu cầu dữ liệu chính xác, giúp tối ưu hóa băng thông.<br>
+<b>3. DevOps & Triển khai?</b><br>
+● Docker: Container hóa ứng dụng giúp triển khai đồng nhất và dễ quản lý.<br>
+● CI/CD: Công cụ như Jenkins, GitLab CI tự động hóa việc kiểm thử và triển khai.<br>
+<b>4. Testing </b><br>
+● Unit Testing: Kiểm thử mã nguồn nhỏ nhất với Jest, JUnit.<br>
+● End-to-End Testing: Kiểm tra quy trình người dùng thực tế với Cypress, Selenium.
+      </p>
+      <img src="image/cnkhac.png " style="height: 370px; width: 500px;">
+    </div>
+    <div class="w3-third w3-container" style="width: 400px; ">
+      <a href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank">
+        <img src="image/webdev.jpg" style="height: 225px; width: 370px;">
+        <h5 style="text-align: center;">Web Development</h5>
+    </a>
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Đ/c: Hà Nội<br>
+        SĐT: 0934551156<br>
+        Mail: long.pd225737@sis.hust.edu.vn
+      </h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.facebook.com/plong1911/" target="_blank">Long Pham</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+
+</body></html>
