@@ -1,51 +1,110 @@
-#include<iostream>
-#include<algorithm>
-#include<string>
+#include	<stdio.h>
+#include	<stdlib.h>
+#include	<string.h>
+#include	<errno.h>
+#include	<unistd.h>
+#include	<sys/wait.h>
+#include	<sys/param.h>
+#include 	<pthread.h>
 
-using namespace std;
+#define	MAXNITEMS 		1000000
+#define	MAXNTHREADS		100
 
-int const maxn = 1e5 + 1;
+		/* globals shared by threads */
+int		nitems;				/* read-only by producer and consumer */
+int		buff[MAXNITEMS];
+struct {
+  pthread_mutex_t	mutex;
+  int				nput;	/* next index to store */
+  int				nval;	/* next value to store */
+} put = { PTHREAD_MUTEX_INITIALIZER };
 
-long long n, q, a[maxn], t[4 * maxn], X, Y, m;
+struct {
+  pthread_mutex_t	mutex;
+  pthread_cond_t	cond;
+  int				nready;	/* number ready for consumer */
+} nready = { PTHREAD_MUTEX_INITIALIZER, PTHREAD_COND_INITIALIZER };
+/* end globals */
 
-void build(int v, int l, int r) {
-	if (l == r) t[v] = a[l];
-	else {
-		int m = (l + r) / 2;
-		build(2 * v, l, m);
-		build(2 * v + 1, m + 1, r);
-		t[v] = t[2 * v] + t[2 * v + 1];
+void	*produce(void *), *consume(void *);
+
+/* include main */
+int main(int argc, char **argv)
+{
+	int		i, nthreads, count[MAXNTHREADS];
+	pthread_t	tid_produce[MAXNTHREADS], tid_consume;
+
+	if (argc != 3){
+		printf("usage: sync <#items> <#threads>");
+		return 0;
 	}
-}
+	nitems = atoi(argv[1]);
+	if (nitems > MAXNITEMS)
+		nitems = MAXNITEMS;
+	printf("Number of item: %d\n", nitems);
+	nthreads = atoi(argv[2]);
+	if (nthreads > MAXNTHREADS)
+		nthreads = MAXNTHREADS;
+	printf("Number of thread: %d\n", nthreads);
 
-long long query(int v, int tl, int tr, int l, int r) {
-	if (l > r) return 0;
-	if (tl == l && tr == r) return t[v];
-	else {
-		int tm = (tl + tr) / 2;
-		long long s1 = query(2 * v, tl, tm, l, min(r, tm));
-		long long s2 = query(2 * v + 1, tm + 1, tr, max(l, tm + 1), r);
-		return s1 + s2;
+
+	/* create all producers and one consumer */
+	for (i = 0; i < nthreads; i++) {
+		count[i] = 0;
+		pthread_create(&tid_produce[i], NULL, produce, &count[i]);
 	}
-}
+	pthread_create(&tid_consume, NULL, consume, NULL);
 
-int main() {
-	cin >> n >> X >> Y;
-	for (int i = 0; i < n; i++) cin >> a[i];
-	build(1, 0, n - 1);
-
-	cin >> m;
-	int a, b;
-	while (m--) {
-        cin >> a >> b;
-        int temp = query(1, 0, n - 1, a - 1, b - 1);
-        if (temp < X || temp > Y) {
-            cout << 1 << endl;
-            continue;
-        } else {
-            cout << 0 << endl;
-            continue;
-        }
+		/* wait for all producers and the consumer */
+	for (i = 0; i < nthreads; i++) {
+		pthread_join(tid_produce[i], NULL);
+		printf("count[%d] = %d\n", i, count[i]);
 	}
+	pthread_join(tid_consume, NULL);
+
 	return 0;
 }
+/* end main */
+
+/* include prodcons */
+void * produce(void *arg)
+{
+	for ( ; ; ) {
+		pthread_mutex_lock(&put.mutex);
+		if (put.nput >= nitems) {
+			pthread_mutex_unlock(&put.mutex);
+			return(NULL);		/* array is full, we're done */
+		}
+		buff[put.nput] = put.nval;
+		put.nput++;
+		put.nval++;
+		pthread_mutex_unlock(&put.mutex);
+
+		pthread_mutex_lock(&nready.mutex);
+		if (nready.nready == 0)
+			pthread_cond_signal(&nready.cond);
+
+		nready.nready++;
+		pthread_mutex_unlock(&nready.mutex);
+
+		*((int *) arg) += 1;
+	}
+}
+
+void * consume(void *arg)
+{
+	int		i;
+
+	for (i = 0; i < nitems; i++) {
+		pthread_mutex_lock(&nready.mutex);
+		while (nready.nready == 0)
+			pthread_cond_wait(&nready.cond, &nready.mutex);
+		nready.nready--;
+		pthread_mutex_unlock(&nready.mutex);
+
+		if (buff[i] != i)
+			printf("buff[%d] = %d\n", i, buff[i]);
+	}
+	return(NULL);
+}
+/* end prodcons */
